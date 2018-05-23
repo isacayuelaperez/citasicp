@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+<!-- Comentario en la Views --> 
+     <record id="view_ej_citasicp_form" model="ir.ui.view"> 
+        <field name="name">ej.citasicp.form</field> 
+        <field name="model">ej.citasicp</field> 
+        <field name="arch" type="xml"> 
+            <form string="Listado de Citasicp"> 
+                <group> 
+                    <field name="Autor"/> 
+                    <field name="Cita"/> 
+                    <field name="Fecha_validacion"/> 
+                    <field name="Orden_validacion"/> 
+                </group> 
+            </form> 
+        </field> 
+    </record> 
+     <record id="view_ej_citasicp_tree" model="ir.ui.view"> 
+        <field name="name">ej.citasicp.tree</field> 
+        <field name="model">ej.citasicp</field> 
+        <field name="arch" type="xml"> 
+           <tree> 
+                    <field name="Autor"/> 
+                    <field name="Cita"/> 
+                    <field name="Fecha_validacion"/> 
+                    <field name="Orden_validacion"/> 
+           </tree> 
+        </field> 
+    </record> 
+    <record model="ir.actions.act_window" id="act_ej_citasicp"> 
+        <field name="name">citasicp</field> 
+        <field name="type">ir.actions.act_window</field> 
+        <field name="res_model">ej.citasicp</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+    </record> 
+<!--  Declaramos los menu --> 
+<menuitem id="ej_citasicp_menu" name="Citasicp" sequence="10"/> 
+<menuitem id="submenu_ej_citasicp_menu" name="Citasicp" sequence="10" parent="ej_citasicp_menu"/> 
+<menuitem id="submenu_ej_citasicp_action" name="Citasicp" sequence="10" parent="submenu_ej_citasicp_menu" action="act_ej_citasicp"/> 
+</odoo> 
